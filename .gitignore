@@ -1,3 +1,6 @@
+*.tcx
+*.so
+
 *.gem
 *.rbc
 /.config
