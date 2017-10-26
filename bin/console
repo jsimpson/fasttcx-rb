@@ -5,7 +5,7 @@ require "fasttcx"
 
 require "pry"
 
-tcx = FastTCX::Ruby.new("/Users/jsimpson/projects/github/js/fasttcx-rb/test.tcx")
+tcx = FastTCX::Ruby.new("./spec/fixtures/activity.tcx")
 tcx.parse
 tcx.process
 

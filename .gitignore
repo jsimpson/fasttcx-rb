@@ -1,4 +1,3 @@
-*.tcx
 *.so
 
 .ruby-version
