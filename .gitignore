@@ -1,6 +1,9 @@
 *.tcx
 *.so
 
+.ruby-version
+.ruby-gemset
+
 *.gem
 *.rbc
 /.config
