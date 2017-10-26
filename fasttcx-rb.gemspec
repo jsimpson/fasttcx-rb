@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{Ruby bindings to libfasttcx.}
   spec.description   = %q{Ruby Ruby bindings to libfasttcx.}
-  spec.homepage      = "https://github.com/intouchhealth/fms2-api-ruby"
+  spec.homepage      = "https://github.com/jsimpson/fasttcx-rb"
 
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|
     f.match(%r{^(test|spec|features)/})
