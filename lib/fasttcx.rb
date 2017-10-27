@@ -1,4 +1,5 @@
 require "ffi"
+require "fasttcx/models/lap"
 require "fasttcx/structs/tcx"
 
 module FastTCX
@@ -36,21 +37,33 @@ module FastTCX
     end
 
     def print_laps
-      lap = laps
-      while !lap[:next].null?
-        puts "lap: #{lap[:heart_rate_average]}"
-        lap = lap[:next]
-      end
+      laps.each { |lap| lap.print }
     end
 
-    private
+    def tcx
+      @tcx
+    end
+
 
     def activities
       @activities ||= @tcx[:activities]
     end
 
     def laps
-      @laps ||= activities[:laps]
+      @laps ||= begin
+                  lap = activities[:laps]
+                  while !lap[:next].null?
+                    _laps << FastTCX::Models::Lap.from_struct(lap)
+                    lap = lap[:next]
+                  end
+                  _laps
+                end
+    end
+
+    private
+
+    def _laps
+      @_laps ||= []
     end
 
     def tracks
