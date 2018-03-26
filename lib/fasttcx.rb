@@ -45,7 +45,6 @@ module FastTCX
       @tcx
     end
 
-
     def activities
       @activities ||= @tcx[:activities]
     end
