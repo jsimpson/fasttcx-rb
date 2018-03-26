@@ -1,4 +1,5 @@
 require "ffi"
+require "fasttcx/models/base"
 require "fasttcx/models/lap"
 require "fasttcx/structs/tcx"
 
@@ -51,13 +52,13 @@ module FastTCX
 
     def laps
       @laps ||= begin
-                  lap = activities[:laps]
-                  while !lap[:next].null?
-                    _laps << FastTCX::Models::Lap.from_struct(lap)
-                    lap = lap[:next]
-                  end
-                  _laps
-                end
+        lap = activities[:laps]
+        while !lap[:next].null?
+          _laps << FastTCX::Models::Lap.from_struct(lap)
+          lap = lap[:next]
+        end
+        _laps
+      end
     end
 
     private
