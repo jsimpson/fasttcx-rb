@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["jsimpson.github@gmail.com"]
 
   spec.summary       = %q{Ruby bindings to libfasttcx.}
-  spec.description   = %q{Ruby Ruby bindings to libfasttcx.}
+  spec.description   = %q{Ruby bindings to libfasttcx.}
   spec.homepage      = "https://github.com/jsimpson/fasttcx-rb"
 
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|
