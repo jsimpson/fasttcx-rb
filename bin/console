@@ -1,12 +1,16 @@
 #!/usr/bin/env ruby
 
 require "bundler/setup"
+require "benchmark"
 require "fasttcx"
 
 require "pry"
 
-tcx = FastTCX::Ruby.new("./spec/fixtures/activity.tcx")
-tcx.parse
-tcx.process
+tcx = nil
+time = Benchmark.realtime do
+  tcx = FastTCX::Ruby.new("./spec/fixtures/activity.tcx")
+  tcx.parse
+  tcx.process
+end
 
 Pry.start
