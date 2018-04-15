@@ -25,6 +25,7 @@ module FastTCX
         :elevation_minimum, :double,
         :total_elevation_gain, :double,
         :total_elevation_loss, :double,
+        :grade_adjusted_time, :double,
         :tracks, FastTCX::Structs::Track.ptr,
         :next, FastTCX::Structs::Lap.ptr
     end

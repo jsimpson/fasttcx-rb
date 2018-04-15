@@ -13,6 +13,7 @@ module FastTCX
         :cadence, :int,
         :speed, :double,
         :power, :int,
+        :grade, :double,
         :next, FastTCX::Structs::Trackpoint.ptr
     end
   end

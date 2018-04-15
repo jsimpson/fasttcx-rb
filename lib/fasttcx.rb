@@ -1,6 +1,6 @@
 require "ffi"
-require "fasttcx/models/base"
 require "fasttcx/models/lap"
+require "fasttcx/models/trackpoint"
 require "fasttcx/structs/tcx"
 
 module FastTCX
@@ -37,14 +37,6 @@ module FastTCX
       FastTCX::C.calculate_summary(@tcx)
     end
 
-    def print_laps
-      laps.each { |lap| lap.print }
-    end
-
-    def tcx
-      @tcx
-    end
-
     def activities
       @activities ||= @tcx[:activities]
     end
@@ -60,18 +52,14 @@ module FastTCX
       end
     end
 
+    def print_laps
+      laps.each { |lap| lap.print }
+    end
+
     private
 
     def _laps
       @_laps ||= []
-    end
-
-    def tracks
-      @tracks ||= laps[:tracks]
-    end
-
-    def trackpoints
-      @trackpoints ||= tracks[:trackpoints]
     end
   end
 end
