@@ -1,6 +1,5 @@
 require "ffi"
 require "fasttcx/models/lap"
-require "fasttcx/models/trackpoint"
 require "fasttcx/structs/tcx"
 
 module FastTCX
